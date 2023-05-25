@@ -1,10 +1,11 @@
 \documentclass{article}
 
-
 \usepackage{biblatex} %Imports biblatex package
 \addbibresource{refs.bib}
 
 \usepackage{graphicx} % Required for inserting images
+
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
 
 % Language setting
 \usepackage[T1,T2A]{fontenc}
@@ -57,7 +58,6 @@
 
 \begin{document}
 \lstset{style=mystyle}
-
 
 \begin{titlepage}
 \begin{center}
@@ -416,6 +416,10 @@ SP & 2269 & 117580 & 562 \\
 \caption*{\textit{* считается сумма размеров множеств IN и OUT всех базовых блоков }}
 \caption*{\textit{* сумма размеров множеств PRI для всех циклов }}
 \end{table}
+
+Как видно из таблицы, даже небольшие по размеру программы, содержат некоторое количество лишних зависимостей по данным, что потенциально может мешать их распараллеливанию без подстановки.
+Также видно, что множества живых переменных достаточно плотно распространяются по всей программе, отчего их хранение требует относительно больших затрат.
+Аналогично лишним зависимостям по данным, отсутствие анализа приватных переменных тоже скажется на распараллеливании, потому что такой тип переменных также встречается нередко.
 
 
 \printbibliography %Prints bibliography
